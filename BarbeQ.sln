@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarbeQ", "BarbeQ\BarbeQ.csp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{BB8D25DB-0757-4233-87B4-1D97EFC1A150}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarbeQ.Examples", "BarbeQ.Examples\BarbeQ.Examples.csproj", "{F72F631E-CE48-4F16-8678-99A0836F5277}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,11 +19,16 @@ Global
 		{297F42B4-0776-4D1A-8B85-83A794E2C6CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{297F42B4-0776-4D1A-8B85-83A794E2C6CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{297F42B4-0776-4D1A-8B85-83A794E2C6CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F72F631E-CE48-4F16-8678-99A0836F5277}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F72F631E-CE48-4F16-8678-99A0836F5277}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F72F631E-CE48-4F16-8678-99A0836F5277}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F72F631E-CE48-4F16-8678-99A0836F5277}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{297F42B4-0776-4D1A-8B85-83A794E2C6CF} = {BB8D25DB-0757-4233-87B4-1D97EFC1A150}
+		{F72F631E-CE48-4F16-8678-99A0836F5277} = {BB8D25DB-0757-4233-87B4-1D97EFC1A150}
 	EndGlobalSection
 EndGlobal

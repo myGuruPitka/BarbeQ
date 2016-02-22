@@ -3,8 +3,8 @@
     public interface IDelivery
     {
         string Payload { get; }
-        bool Ack { get; }
-        bool Reject { get; }
-        bool Push { get; }
+        bool Ack();
+        bool Reject();
+        bool Push();
     }
 }
