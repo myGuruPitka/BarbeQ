@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Sider;
+using System.Collections.Concurrent;
 
 namespace BarbeQ
 {
@@ -22,8 +23,7 @@ namespace BarbeQ
         private TimeSpan m_pollDuration;
         private delegate void onDeliveryDelegate(IDelivery delivery);
         private event onDeliveryDelegate OnDelivery;
-        private IList<IConsumer> m_consumers;
-
+        private ConcurrentBag<IConsumer> m_consumers;
 
         private IRedisClient<string> m_redisClient;
 
@@ -39,7 +39,7 @@ namespace BarbeQ
             m_rejectedKey = ConstantKeys.queueRejectedTemplate.Replace(ConstantKeys.phQueue, name);
             m_unackedKey = ConstantKeys.connectionQueueUnackedTemplate.Replace(ConstantKeys.phConnection, connectionName).Replace(ConstantKeys.phQueue, name);
 
-            m_consumers = new List<IConsumer>();
+            m_consumers = new ConcurrentBag<IConsumer>();
 
             this.OnDelivery += RedisQueue_OnDelivery;
 
@@ -69,7 +69,9 @@ namespace BarbeQ
 
             var name = string.Format("{0}-{1}", tag, Guid.NewGuid().ToString().Substring(0, 6));
 
-            m_redisClient.SAdd(m_consumersKey, name);
+            var redisClient = new RedisClient();
+            redisClient.Select(3);
+            redisClient.SAdd(m_consumersKey, name);
 
             return name;
         }
